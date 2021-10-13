@@ -14,10 +14,10 @@ export const counterModuleStyles = css`
     align-items: center;
     justify-content: center;
   }
-  .counter > * {
+  .counter > .actions > * {
     margin: 0.5rem;
   }
-  span {
+  .counter > span {
     font-size: 1.5em;
   }
 `;
