@@ -5,10 +5,10 @@ import{r as c,s as a,p as d,n as f,e as m}from"./vendor.2235af2e.js";const b=fun
     align-items: center;
     justify-content: center;
   }
-  .counter > * {
+  .counter > .actions > * {
     margin: 0.5rem;
   }
-  span {
+  .counter > span {
     font-size: 1.5em;
   }
 `;class v{constructor(r){this.host=r,this.value=0,r.addController(this)}hostConnected(){this.value=0}increment(){this.value++,this.host.requestUpdate()}decrement(){this.value--,this.host.requestUpdate()}}function y(n){return d`<div class="counter">
