@@ -7,14 +7,16 @@ import {
 } from "./counter";
 import { headerModuleStyles, headerModuleTemplate } from "./header";
 
-export const appModuleStyles = css`
-  main {
-    display: flex;
-    flex-direction: column;
-  }
-  ${headerModuleStyles}
-  ${counterModuleStyles}
-`;
+export const appModuleStyles = [
+  css`
+    main {
+      display: flex;
+      flex-direction: column;
+    }
+  `,
+  headerModuleStyles,
+  counterModuleStyles,
+];
 
 export interface AppModuleProps {
   name: string;
@@ -34,7 +36,7 @@ export function appModuleTemplate(props: AppModuleProps) {
 
 @customElement("app-module")
 export class AppModule extends LitElement implements AppModuleProps {
-  static styles = [appModuleStyles];
+  static styles = appModuleStyles;
 
   @property({ type: String }) name = "World";
 

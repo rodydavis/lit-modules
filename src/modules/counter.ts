@@ -7,7 +7,7 @@ import {
 } from "lit";
 import { customElement } from "lit/decorators.js";
 
-export const counterModuleStyles = css`
+export const counterModuleStyles = [css`
   .counter {
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@ export const counterModuleStyles = css`
   .counter > span {
     font-size: 1.5em;
   }
-`;
+`];
 
 export class CounterModuleController implements ReactiveController {
   constructor(public host: ReactiveControllerHost) {
@@ -60,7 +60,7 @@ export function counterModuleTemplate(props: CounterModuleProps) {
 
 @customElement("counter-module")
 export class CounterModule extends LitElement implements CounterModuleProps {
-  static styles = [counterModuleStyles];
+  static styles = counterModuleStyles;
 
   counter = new CounterModuleController(this);
 
